@@ -3,7 +3,23 @@ from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import random
+import os
+
+
+
+bstack_options = {
+    "os" : "Windows",
+    "osVersion" : "10",
+    "buildName" : "BStack Build Name: ",
+    "projectName" : "BStack Project Name: ",
+    "seleniumVersion" : "4.0.0",
+    "userName": "alumnosanjaumele_PCfaVy",
+    "accessKey": "pJxYjfx5ozq4wX7y7xw2"
+}
+
 
 def wait(driver:webdriver.Chrome,amount:float):
     driver.implicitly_wait(amount)
@@ -11,8 +27,12 @@ def wait(driver:webdriver.Chrome,amount:float):
 
 
 def init_driver():
-    web = "http://localhost:3000/"
-    driver = webdriver.Chrome()
+    web = "https://pruscitest.onrender.com/"
+    options = webdriver.ChromeOptions()
+    options.set_capability('bstack:options', bstack_options)
+    driver = webdriver.Remote(
+    command_executor="https://hub.browserstack.com/wd/hub",
+    options=options)
     driver.get(web)
     wait(driver,1)
     registerTester(driver,"mine@gmail.com","mine1234")
