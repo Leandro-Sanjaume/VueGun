@@ -40,4 +40,4 @@ jobs:
         pip install browserstack-sdk
     - name: Test with pytest
       run: |
-         python /testing/main.py
+         python ../../testing/main.py
