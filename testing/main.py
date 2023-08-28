@@ -11,7 +11,7 @@ def wait(driver:webdriver.Chrome,amount:float):
 
 
 def init_driver():
-    web = "https://pruscitest.onrender.com/"
+    web = "http://localhost:3000/"
     driver = webdriver.Chrome()
     driver.get(web)
     wait(driver,1)
