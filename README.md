@@ -1,3 +1,5 @@
+PAPOTA GAMING
+
 # Nuxt + Firebase Starter Template
 
 A ready-to-go template for quick development of any application using Nuxt 3 and Firebase.
